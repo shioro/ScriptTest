@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class Magic
 {
-    public int mp = 53;
 
     public void Attack()
     {
-        if(mp >= 5)
+        int mp = 53;
+        while (mp >= 5)
         {
             mp -= 5;
-            Debug.Log("魔法攻撃をした。残りMPは" + this.mp + "。");
+            Debug.Log("魔法攻撃をした。残りMPは" + mp + "。");
         }
-        else
-        {
-            Debug.Log("MPが足りないため魔法が使えない。");
-        }
+        Debug.Log("MPが足りないため魔法が使えない。");
     }
 
 }
@@ -35,18 +32,15 @@ public class Test : MonoBehaviour
         {
             Debug.Log(array[i]);
         }
-        
+
         Magic magic = new Magic();
-        while(magic.mp > 0)
-        {
-            magic.Attack();
-        }
-        
+        magic.Attack();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
